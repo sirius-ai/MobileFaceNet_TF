@@ -1,0 +1,294 @@
+<tf.Variable 'MobileFaceNet/Conv2d_0/weights:0' shape=(3, 3, 3, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_0/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_0/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_0/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_0/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_0/prelu_alphas:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/depthwise_weights:0' shape=(3, 3, 64, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d/prelu_alphas:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv/weights:0' shape=(1, 1, 64, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_1/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_1/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_2/weights:0' shape=(1, 1, 128, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_2/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_2/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_2/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_2/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_3/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_2/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_4/weights:0' shape=(1, 1, 128, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_4/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_4/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_4/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_4/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_5/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_3/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_6/weights:0' shape=(1, 1, 128, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_6/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_6/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_6/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_6/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_7/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_4/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_8/weights:0' shape=(1, 1, 128, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_8/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_8/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_8/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_8/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_9/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_5/prelu_alphas:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_10/weights:0' shape=(1, 1, 128, 64) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_10/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_10/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_10/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_10/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/weights:0' shape=(1, 1, 64, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_11/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_6/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_12/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_12/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_12/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_12/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_12/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_13/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_7/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_14/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_14/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_14/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_14/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_14/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_15/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_8/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_16/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_16/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_16/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_16/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_16/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_17/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_9/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_18/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_18/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_18/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_18/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_18/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_19/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_10/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_20/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_20/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_20/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_20/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_20/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_21/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_11/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_22/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_22/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_22/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_22/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_22/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_23/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_12/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_24/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_24/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_24/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_24/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_24/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/weights:0' shape=(1, 1, 128, 512) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_25/prelu_alphas:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_13/prelu_alphas:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_26/weights:0' shape=(1, 1, 512, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_26/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_26/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_26/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_26/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_27/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_14/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_28/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_28/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_28/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_28/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_28/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_29/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/SeparableConv2d_15/prelu_alphas:0' shape=(256,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_30/weights:0' shape=(1, 1, 256, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_30/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_30/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_30/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv_30/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/weights:0' shape=(1, 1, 128, 512) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Conv2d_7/prelu_alphas:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/SeparableConv2d/depthwise_weights:0' shape=(7, 7, 512, 1) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/SeparableConv2d/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/SeparableConv2d/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/SeparableConv2d/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/SeparableConv2d/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/Conv/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/Conv/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/Conv/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/Conv/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/Conv/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/weights:0' shape=(1, 1, 512, 128) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
+<tf.Variable 'centers_var/centers:0' shape=(128, 85164) dtype=float32_ref>
