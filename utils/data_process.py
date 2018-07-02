@@ -146,8 +146,8 @@ def test_tfrecords():
                 print("End of dataset")
 
 if __name__ == '__main__':
-    '''define parameters'''
-    pass
+    '''data process'''
+    create_tfrecords()
 
 
 
