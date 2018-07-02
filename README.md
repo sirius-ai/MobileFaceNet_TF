@@ -39,4 +39,6 @@ Tensorflow implementation for MobileFaceNet.
 1. [facenet](https://github.com/davidsandberg/facenet)
 2. [InsightFace mxnet](https://github.com/deepinsight/insightface)
 3. [InsightFace_TF](https://github.com/auroua/InsightFace_TF)
-4. [InsightFace : Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698)
+4. [MobileFaceNets: Efficient CNNs for Accurate Real-Time Face Verification on Mobile Devices](https://arxiv.org/abs/1804.07573)
+5. [CosFace: Large Margin Cosine Loss for Deep Face Recognition](https://arxiv.org/abs/1801.09414)
+6. [InsightFace : Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698)
