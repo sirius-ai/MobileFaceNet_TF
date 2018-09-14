@@ -3,6 +3,7 @@ from scipy import misc
 import numpy as np
 import mxnet as mx
 import argparse
+import random
 import pickle
 import cv2
 import os
@@ -27,8 +28,9 @@ def mx2tfrecords(imgidx, imgrec, args):
     if not os.path.exists(args.tfrecords_file_path):
         os.makedirs(args.tfrecords_file_path)
     writer = tf.python_io.TFRecordWriter(output_path)
-    for i in imgidx:
-        img_info = imgrec.read_idx(i)
+    random.shuffle(imgidx)
+    for i, index in enumerate(imgidx):
+        img_info = imgrec.read_idx(index)
         header, img = mx.recordio.unpack(img_info)
         label = int(header.label)
         example = tf.train.Example(features=tf.train.Features(feature={
@@ -38,6 +40,7 @@ def mx2tfrecords(imgidx, imgrec, args):
         writer.write(example.SerializeToString())  # Serialize To String
         if i % 10000 == 0:
             print('%d num image processed' % i)
+    print('%d num image processed' % i)
     writer.close()
 
 def random_rotate_image(image):
@@ -68,7 +71,7 @@ def create_tfrecords():
     imgrec = mx.recordio.MXIndexedRecordIO(args.idx_path, args.bin_path, 'r')
     s = imgrec.read_idx(0)
     header, _ = mx.recordio.unpack(s)
-    print(header.label)
+    #print(header.label)
     imgidx = list(range(1, int(header.label[0])))
     seq_identity = range(int(header.label[0]), int(header.label[1]))
     for identity in seq_identity:
@@ -77,7 +80,7 @@ def create_tfrecords():
         a, b = int(header.label[0]), int(header.label[1])
         id2range[identity] = (a, b)
     print('id2range', len(id2range))
-    print('Number of examples in training set: {}'.format(imgidx))
+    print('Number of examples in training set: {}'.format(imgidx[-1]))
 
     # generate tfrecords
     mx2tfrecords(imgidx, imgrec, args)
@@ -110,6 +113,8 @@ def load_data(db_name, image_size, args):
     for i in range(len(issame_list)*2):
         _bin = bins[i]
         img = mx.image.imdecode(_bin).asnumpy()
+        #img = cv2.imdecode(np.fromstring(_bin, np.uint8), -1)
+        #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         #img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
         img = img - 127.5
         img = img * 0.0078125
@@ -140,7 +145,8 @@ def test_tfrecords():
         while True:
             try:
                 images, labels = sess.run(next_element)
-                cv2.imshow('test', images[1, ...])
+                img = cv2.cvtColor(images[1, ...], cv2.COLOR_RGB2BGR)
+                cv2.imshow('test', img)
                 cv2.waitKey(0)
             except tf.errors.OutOfRangeError:
                 print("End of dataset")
