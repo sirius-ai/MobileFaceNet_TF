@@ -7,7 +7,6 @@ Author: aiboy.wei@outlook.com .
 '''
 
 from utils.data_process import parse_function, load_data
-from tensorflow.core.protobuf import config_pb2
 from nets.MobileFaceNet import inference
 from losses.face_losses import cos_loss
 from verification import evaluate
@@ -26,13 +25,13 @@ slim = tf.contrib.slim
 
 def get_parser():
     parser = argparse.ArgumentParser(description='parameters to train net')
-    parser.add_argument('--max_epoch', default=10, help='epoch to train the network')
+    parser.add_argument('--max_epoch', default=12, help='epoch to train the network')
     parser.add_argument('--image_size', default=[112, 112], help='the image size')
     parser.add_argument('--num_output', default=85164, help='the train images number')
     parser.add_argument('--embedding_size', type=int,
                         help='Dimensionality of the embedding.', default=128)
     parser.add_argument('--weight_decay', default=5e-5, help='L2 weight regularization.')
-    parser.add_argument('--lr_schedule', help='Number of epochs for learning rate piecewise.', default=[1, 4, 6, 8])
+    parser.add_argument('--lr_schedule', help='Number of epochs for learning rate piecewise.', default=[3, 6, 8, 10])
     parser.add_argument('--train_batch_size', default=90, help='batch size to train network')
     parser.add_argument('--test_batch_size', type=int,
                         help='Number of images to process in a batch in the test set.', default=100)
@@ -52,7 +51,7 @@ def get_parser():
     parser.add_argument('--summary_interval', default=400, help='interval to save summary')
     parser.add_argument('--ckpt_interval', default=2000, help='intervals to save ckpt file')
     parser.add_argument('--validate_interval', default=2000, help='intervals to save ckpt file')
-    parser.add_argument('--show_info_interval', default=20, help='intervals to save ckpt file')
+    parser.add_argument('--show_info_interval', default=50, help='intervals to save ckpt file')
     parser.add_argument('--pretrained_model', type=str, default='', help='Load a pretrained model before training starts.')
     parser.add_argument('--optimizer', type=str, choices=['ADAGRAD', 'ADADELTA', 'ADAM', 'RMSPROP', 'MOM'],
                         help='The optimization algorithm to use', default='ADAM')
@@ -212,7 +211,7 @@ if __name__ == '__main__':
                     start = time.time()
                     _, total_loss_val, inference_loss_val, reg_loss_val, _, acc_val = \
                     sess.run([train_op, total_loss, inference_loss, regularization_losses, inc_global_step_op, Accuracy_Op],
-                             feed_dict=feed_dict, options=config_pb2.RunOptions(report_tensor_allocations_upon_oom=True))
+                             feed_dict=feed_dict)
                     end = time.time()
                     pre_sec = args.train_batch_size/(end - start)
 

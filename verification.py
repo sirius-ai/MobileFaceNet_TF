@@ -30,7 +30,6 @@ from sklearn.decomposition import PCA
 import sklearn
 from scipy import interpolate
 import datetime
-import mxnet as mx
 
 max_threshold = 0
 min_threshold = 4
