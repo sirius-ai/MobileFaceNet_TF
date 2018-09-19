@@ -78,7 +78,7 @@ def calculate_roc(thresholds, embeddings1, embeddings2, actual_issame, nrof_fold
         for threshold_idx, threshold in enumerate(thresholds):
             _, _, acc_train[threshold_idx] = calculate_accuracy(threshold, dist[train_set], actual_issame[train_set])
         best_threshold_index = np.argmax(acc_train)
-        print('best_threshold_index', best_threshold_index, acc_train[best_threshold_index])
+        # print('best_threshold_index', best_threshold_index, acc_train[best_threshold_index])
         for threshold_idx, threshold in enumerate(thresholds):
             tprs[fold_idx, threshold_idx], fprs[fold_idx, threshold_idx], _ = calculate_accuracy(threshold,
                                                                                                  dist[test_set],
@@ -91,7 +91,7 @@ def calculate_roc(thresholds, embeddings1, embeddings2, actual_issame, nrof_fold
             max_threshold = thresholds[best_threshold_index]
         if min_threshold > thresholds[best_threshold_index]:
             min_threshold = thresholds[best_threshold_index]
-        print('thresholds max: {} <=> min: {}'.format(max_threshold, min_threshold))
+    print('thresholds max: {} <=> min: {}'.format(max_threshold, min_threshold))
 
     tpr = np.mean(tprs, 0)
     fpr = np.mean(fprs, 0)

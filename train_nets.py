@@ -236,9 +236,9 @@ if __name__ == '__main__':
                     # validate
                     if count > 0 and count % args.validate_interval == 0:
                         print('\nIteration', count, 'testing...')
-                        for ver_step in range(len(ver_list)):
+                        for db_index in range(len(ver_list)):
                             start_time = time.time()
-                            data_sets, issame_list = ver_list[ver_step]
+                            data_sets, issame_list = ver_list[db_index]
                             emb_array = np.zeros((data_sets.shape[0], args.embedding_size))
                             nrof_batches = data_sets.shape[0] // args.test_batch_size
                             for index in range(nrof_batches): # actual is same multiply 2, test data total
@@ -251,17 +251,17 @@ if __name__ == '__main__':
                             tpr, fpr, accuracy, val, val_std, far = evaluate(emb_array, issame_list, nrof_folds=args.eval_nrof_folds)
                             duration = time.time() - start_time
 
-                            print("total time %.3f to evaluate %d images of %s" % (duration, data_sets.shape[0], ver_name_list[ver_step]))
+                            print("total time %.3fs to evaluate %d images of %s" % (duration, data_sets.shape[0], ver_name_list[db_index]))
                             print('Accuracy: %1.3f+-%1.3f' % (np.mean(accuracy), np.std(accuracy)))
-                            print('fpr and tpr: %1.3f %1.3f' % (np.mean(fpr, 0), np.mean(tpr, 0)))
                             print('Validation rate: %2.5f+-%2.5f @ FAR=%2.5f' % (val, val_std, far))
+                            print('fpr and tpr: %1.3f %1.3f' % (np.mean(fpr, 0), np.mean(tpr, 0)))
 
                             auc = metrics.auc(fpr, tpr)
                             print('Area Under Curve (AUC): %1.3f' % auc)
                             eer = brentq(lambda x: 1. - x - interpolate.interp1d(fpr, tpr)(x), 0., 1.)
                             print('Equal Error Rate (EER): %1.3f\n' % eer)
 
-                            with open(os.path.join(log_dir, '{}_result.txt'.format(ver_name_list[ver_step])), 'at') as f:
+                            with open(os.path.join(log_dir, '{}_result.txt'.format(ver_name_list[db_index])), 'at') as f:
                                 f.write('%d\t%.5f\t%.5f\n' % (count, np.mean(accuracy), val))
 
                             if ver_name_list == 'lfw' and np.mean(accuracy) > 0.992:

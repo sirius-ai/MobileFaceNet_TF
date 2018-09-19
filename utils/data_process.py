@@ -112,9 +112,9 @@ def load_data(db_name, image_size, args):
 
     for i in range(len(issame_list)*2):
         _bin = bins[i]
-        #img = mx.image.imdecode(_bin).asnumpy()
-        img = cv2.imdecode(np.fromstring(_bin, np.uint8), -1)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = mx.image.imdecode(_bin).asnumpy()
+        # img = cv2.imdecode(np.fromstring(_bin, np.uint8), -1)
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         #img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
         img = img - 127.5
         img = img * 0.0078125
