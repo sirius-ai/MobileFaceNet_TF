@@ -21,6 +21,10 @@ Tensorflow implementation for MobileFaceNet.
 2. move dataset to ${MobileFaceNet_TF_ROOT}/datasets.
 3. run ${MobileFaceNet_TF_ROOT}/utils/data_process.py.
 
+## pretrained model
+
+* [pretrained_model](https://github.com/sirius-ai/MobileFaceNet_TF/tree/master/arch/pretrained_model/)
+
 ## training
 
 1. refined super parameters by yourself special project.
