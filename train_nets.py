@@ -61,7 +61,7 @@ def get_parser():
     parser.add_argument('--log_histograms',
                         help='Enables logging of weight/bias histograms in tensorboard.', action='store_true')
     parser.add_argument('--prelogits_norm_loss_factor', type=float,
-                        help='Loss based on the norm of the activations in the prelogits layer.', default=5e-5)
+                        help='Loss based on the norm of the activations in the prelogits layer.', default=2e-5)
     parser.add_argument('--prelogits_norm_p', type=float,
                         help='Norm to use for prelogits norm loss.', default=1.0)
 
@@ -129,7 +129,7 @@ if __name__ == '__main__':
         embeddings = tf.nn.l2_normalize(prelogits, 1, 1e-10, name='embeddings')
 
         # Norm for the prelogits
-        eps = 1e-4
+        eps = 1e-5
         prelogits_norm = tf.reduce_mean(tf.norm(tf.abs(prelogits) + eps, ord=args.prelogits_norm_p, axis=1))
         tf.add_to_collection(tf.GraphKeys.REGULARIZATION_LOSSES, prelogits_norm * args.prelogits_norm_loss_factor)
 
