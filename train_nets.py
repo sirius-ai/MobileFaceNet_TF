@@ -7,8 +7,9 @@ Author: aiboy.wei@outlook.com .
 '''
 
 from utils.data_process import parse_function, load_data
+from losses.face_losses import arcface_loss
 from nets.MobileFaceNet import inference
-from losses.face_losses import cos_loss
+# from losses.face_losses import cos_loss
 from verification import evaluate
 from scipy.optimize import brentq
 from utils.common import train
@@ -31,7 +32,7 @@ def get_parser():
     parser.add_argument('--embedding_size', type=int,
                         help='Dimensionality of the embedding.', default=128)
     parser.add_argument('--weight_decay', default=5e-5, help='L2 weight regularization.')
-    parser.add_argument('--lr_schedule', help='Number of epochs for learning rate piecewise.', default=[3, 6, 8, 10])
+    parser.add_argument('--lr_schedule', help='Number of epochs for learning rate piecewise.', default=[4, 7, 9, 11])
     parser.add_argument('--train_batch_size', default=90, help='batch size to train network')
     parser.add_argument('--test_batch_size', type=int,
                         help='Number of images to process in a batch in the test set.', default=100)
@@ -116,7 +117,6 @@ if __name__ == '__main__':
         # identity the input, for inference
         inputs = tf.identity(inputs, 'input')
 
-        w_init_method = slim.initializers.xavier_initializer()
         prelogits, net_points = inference(inputs, bottleneck_layer_size=args.embedding_size, phase_train=phase_train_placeholder, weight_decay=args.weight_decay)
 
         # record the network architecture
@@ -133,7 +133,9 @@ if __name__ == '__main__':
         prelogits_norm = tf.reduce_mean(tf.norm(tf.abs(prelogits) + eps, ord=args.prelogits_norm_p, axis=1))
         tf.add_to_collection(tf.GraphKeys.REGULARIZATION_LOSSES, prelogits_norm * args.prelogits_norm_loss_factor)
 
-        inference_loss, logit = cos_loss(prelogits, labels, args.num_output)
+        # inference_loss, logit = cos_loss(prelogits, labels, args.num_output)
+        w_init_method = slim.initializers.xavier_initializer()
+        inference_loss, logit = arcface_loss(embedding=embeddings, labels=labels, w_init=w_init_method, out_num=args.num_output)
         tf.add_to_collection('losses', inference_loss)
 
         # total losses

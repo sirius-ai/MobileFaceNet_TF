@@ -45,8 +45,10 @@ def arcface_loss(embedding, labels, out_num, w_init=None, s=64., m=0.5):
 
         s_cos_t = tf.multiply(s, cos_t, name='scalar_cos_t')
 
-        output = tf.add(tf.multiply(s_cos_t, inv_mask), tf.multiply(cos_mt_temp, mask), name='arcface_loss_output')
-    return output
+        logit = tf.add(tf.multiply(s_cos_t, inv_mask), tf.multiply(cos_mt_temp, mask), name='arcface_loss_output')
+        inference_loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logit, labels=labels))
+
+    return inference_loss, logit
 
 
 def cosineface_losses(embedding, labels, out_num, w_init=None, s=30., m=0.4):
