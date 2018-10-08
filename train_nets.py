@@ -117,7 +117,7 @@ if __name__ == '__main__':
         inputs = tf.identity(inputs, 'input')
 
         w_init_method = slim.initializers.xavier_initializer()
-        prelogits, net_points = inference(inputs, phase_train=phase_train_placeholder, weight_decay=args.weight_decay)
+        prelogits, net_points = inference(inputs, bottleneck_layer_size=args.embedding_size, phase_train=phase_train_placeholder, weight_decay=args.weight_decay)
 
         # record the network architecture
         hd = open("./arch/txt/MobileFaceNet_Arch.txt", 'w')
