@@ -28,7 +28,8 @@ def get_parser():
     parser = argparse.ArgumentParser(description='parameters to train net')
     parser.add_argument('--max_epoch', default=12, help='epoch to train the network')
     parser.add_argument('--image_size', default=[112, 112], help='the image size')
-    parser.add_argument('--num_output', default=85164, help='the train images number')
+    parser.add_argument('--class_number', required=True,
+                        help='class number depend on your training datasets, MS1M-V1: 85164, MS1M-V2: 85742')
     parser.add_argument('--embedding_size', type=int,
                         help='Dimensionality of the embedding.', default=128)
     parser.add_argument('--weight_decay', default=5e-5, help='L2 weight regularization.')
@@ -133,9 +134,9 @@ if __name__ == '__main__':
         prelogits_norm = tf.reduce_mean(tf.norm(tf.abs(prelogits) + eps, ord=args.prelogits_norm_p, axis=1))
         tf.add_to_collection(tf.GraphKeys.REGULARIZATION_LOSSES, prelogits_norm * args.prelogits_norm_loss_factor)
 
-        # inference_loss, logit = cos_loss(prelogits, labels, args.num_output)
+        # inference_loss, logit = cos_loss(prelogits, labels, args.class_number)
         w_init_method = slim.initializers.xavier_initializer()
-        inference_loss, logit = arcface_loss(embedding=embeddings, labels=labels, w_init=w_init_method, out_num=args.num_output)
+        inference_loss, logit = arcface_loss(embedding=embeddings, labels=labels, w_init=w_init_method, out_num=args.class_number)
         tf.add_to_collection('losses', inference_loss)
 
         # total losses
