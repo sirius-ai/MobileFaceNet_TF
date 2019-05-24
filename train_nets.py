@@ -6,8 +6,8 @@ Tensorflow implementation for MobileFaceNet.
 Author: aiboy.wei@outlook.com .
 '''
 
+from losses.face_losses import insightface_loss, cosineface_loss, combine_loss
 from utils.data_process import parse_function, load_data
-from losses.face_losses import arcface_loss
 from nets.MobileFaceNet import inference
 # from losses.face_losses import cos_loss
 from verification import evaluate
@@ -66,6 +66,15 @@ def get_parser():
                         help='Loss based on the norm of the activations in the prelogits layer.', default=2e-5)
     parser.add_argument('--prelogits_norm_p', type=float,
                         help='Norm to use for prelogits norm loss.', default=1.0)
+    parser.add_argument('--loss_type', default='insightface', help='loss type, choice type are insightface/cosine/combine')
+    parser.add_argument('--margin_s', type=float,
+                        help='insightface_loss/cosineface_losses/combine_loss loss scale.', default=64.)
+    parser.add_argument('--margin_m', type=float,
+                        help='insightface_loss/cosineface_losses/combine_loss loss margin.', default=0.5)
+    parser.add_argument('--margin_a', type=float,
+                        help='combine_loss loss margin a.', default=1.0)
+    parser.add_argument('--margin_b', type=float,
+                        help='combine_loss loss margin b.', default=0.2)
 
     args = parser.parse_args()
     return args
@@ -136,7 +145,14 @@ if __name__ == '__main__':
 
         # inference_loss, logit = cos_loss(prelogits, labels, args.class_number)
         w_init_method = slim.initializers.xavier_initializer()
-        inference_loss, logit = arcface_loss(embedding=embeddings, labels=labels, w_init=w_init_method, out_num=args.class_number)
+        if args.loss_type == 'insightface':
+            inference_loss, logit = insightface_loss(embeddings, labels, args.class_number, w_init_method)
+        elif args.loss_type == 'cosine':
+            inference_loss, logit = cosineface_loss(embeddings, labels, args.class_number, w_init_method)
+        elif args.loss_type == 'combine':
+            inference_loss, logit = combine_loss(embeddings, labels, args.class_number, w_init_method)
+        else:
+            assert 0, 'loss type error, choice item just one of [insightface, cosine, combine], please check!'
         tf.add_to_collection('losses', inference_loss)
 
         # total losses

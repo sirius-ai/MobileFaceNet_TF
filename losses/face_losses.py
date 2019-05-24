@@ -2,7 +2,7 @@ import tensorflow as tf
 import math
 
 
-def arcface_loss(embedding, labels, out_num, w_init=None, s=64., m=0.5):
+def insightface_loss(embedding, labels, out_num, w_init=None, s=64., m=0.5):
     '''
     :param embedding: the input embedding vectors
     :param labels:  the input labels, the shape should be eg: (batch_size, 1)
@@ -15,7 +15,7 @@ def arcface_loss(embedding, labels, out_num, w_init=None, s=64., m=0.5):
     sin_m = math.sin(m)
     mm = sin_m * m  # issue 1
     threshold = math.cos(math.pi - m)
-    with tf.variable_scope('arcface_loss'):
+    with tf.variable_scope('insightface_loss'):
         # inputs and weights norm
         embedding_norm = tf.norm(embedding, axis=1, keepdims=True)
         embedding = tf.div(embedding, embedding_norm, name='norm_embedding')
@@ -51,7 +51,7 @@ def arcface_loss(embedding, labels, out_num, w_init=None, s=64., m=0.5):
     return inference_loss, logit
 
 
-def cosineface_losses(embedding, labels, out_num, w_init=None, s=30., m=0.4):
+def cosineface_loss(embedding, labels, out_num, w_init=None, s=30., m=0.4):
     '''
     :param embedding: the input embedding vectors
     :param labels:  the input labels, the shape should be eg: (batch_size, 1)
@@ -75,11 +75,13 @@ def cosineface_losses(embedding, labels, out_num, w_init=None, s=30., m=0.4):
         mask = tf.one_hot(labels, depth=out_num, name='one_hot_mask')
         inv_mask = tf.subtract(1., mask, name='inverse_mask')
 
-        output = tf.add(s * tf.multiply(cos_t, inv_mask), s * tf.multiply(cos_t_m, mask), name='cosineface_loss_output')
-    return output
+        logit = tf.add(s * tf.multiply(cos_t, inv_mask), s * tf.multiply(cos_t_m, mask), name='cosineface_loss_output')
+        inference_loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logit, labels=labels))
+
+    return inference_loss, logit
 
 
-def combine_loss_val(embedding, labels, w_init, out_num, margin_a, margin_m, margin_b, s):
+def combine_loss(embedding, labels, out_num, w_init, margin_a=1., margin_m=0.3, margin_b=0.2, s=64.):
     '''
     This code is contributed by RogerLo. Thanks for you contribution.
 
@@ -90,37 +92,40 @@ def combine_loss_val(embedding, labels, w_init, out_num, margin_a, margin_m, mar
     :param m: the margin value, default is 0.5
     :return: the final cacualted output, this output is send into the tf.nn.softmax directly
     '''
-    weights = tf.get_variable(name='embedding_weights', shape=(embedding.get_shape().as_list()[-1], out_num),
-                              initializer=w_init, dtype=tf.float32)
-    weights_unit = tf.nn.l2_normalize(weights, axis=0)
-    embedding_unit = tf.nn.l2_normalize(embedding, axis=1)
-    cos_t = tf.matmul(embedding_unit, weights_unit)
-    ordinal = tf.constant(list(range(0, embedding.get_shape().as_list()[0])), tf.int64)
-    ordinal_y = tf.stack([ordinal, labels], axis=1)
-    zy = cos_t * s
-    sel_cos_t = tf.gather_nd(zy, ordinal_y)
-    if margin_a != 1.0 or margin_m != 0.0 or margin_b != 0.0:
-        if margin_a == 1.0 and margin_m == 0.0:
-            s_m = s * margin_b
-            new_zy = sel_cos_t - s_m
-        else:
-            cos_value = sel_cos_t / s
-            t = tf.acos(cos_value)
-            if margin_a != 1.0:
-                t = t * margin_a
-            if margin_m > 0.0:
-                t = t + margin_m
-            body = tf.cos(t)
-            if margin_b > 0.0:
-                body = body - margin_b
-            new_zy = body * s
-    updated_logits = tf.add(zy, tf.scatter_nd(ordinal_y, tf.subtract(new_zy, sel_cos_t), zy.get_shape()))
-    loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=labels, logits=updated_logits))
-    predict_cls = tf.argmax(updated_logits, 1)
-    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.cast(predict_cls, tf.int64), tf.cast(labels, tf.int64)), 'float'))
-    predict_cls_s = tf.argmax(zy, 1)
-    accuracy_s = tf.reduce_mean(tf.cast(tf.equal(tf.cast(predict_cls_s, tf.int64), tf.cast(labels, tf.int64)), 'float'))
-    return zy, loss, accuracy, accuracy_s, predict_cls_s
+    with tf.variable_scope('combine_loss'):
+        weights = tf.get_variable(name='embedding_weights', shape=(embedding.get_shape().as_list()[-1], out_num),
+                                  initializer=w_init, dtype=tf.float32)
+        weights_unit = tf.nn.l2_normalize(weights, axis=0)
+        embedding_unit = tf.nn.l2_normalize(embedding, axis=1)
+        cos_t = tf.matmul(embedding_unit, weights_unit)
+        ordinal = tf.constant(list(range(0, embedding.get_shape().as_list()[0])), tf.int64)
+        ordinal_y = tf.stack([ordinal, labels], axis=1)
+        zy = cos_t * s
+        sel_cos_t = tf.gather_nd(zy, ordinal_y)
+        if margin_a != 1.0 or margin_m != 0.0 or margin_b != 0.0:
+            if margin_a == 1.0 and margin_m == 0.0:
+                s_m = s * margin_b
+                new_zy = sel_cos_t - s_m
+            else:
+                cos_value = sel_cos_t / s
+                t = tf.acos(cos_value)
+                if margin_a != 1.0:
+                    t = t * margin_a
+                if margin_m > 0.0:
+                    t = t + margin_m
+                body = tf.cos(t)
+                if margin_b > 0.0:
+                    body = body - margin_b
+                new_zy = body * s
+        updated_logits = tf.add(zy, tf.scatter_nd(ordinal_y, tf.subtract(new_zy, sel_cos_t), zy.get_shape()))
+        loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=labels, logits=updated_logits))
+        # predict_cls = tf.argmax(updated_logits, 1)
+        # accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.cast(predict_cls, tf.int64), tf.cast(labels, tf.int64)), 'float'))
+        # predict_cls_s = tf.argmax(zy, 1)
+        # accuracy_s = tf.reduce_mean(tf.cast(tf.equal(tf.cast(predict_cls_s, tf.int64), tf.cast(labels, tf.int64)), 'float'))
+        # return zy, loss, accuracy, accuracy_s, predict_cls_s
+
+    return loss, updated_logits
 
 def center_loss(features, label, alfa, nrof_classes):
     """Center loss based on the paper "A Discriminative Feature Learning Approach for Deep Face Recognition"
