@@ -28,7 +28,7 @@ def get_parser():
     parser = argparse.ArgumentParser(description='parameters to train net')
     parser.add_argument('--max_epoch', default=12, help='epoch to train the network')
     parser.add_argument('--image_size', default=[112, 112], help='the image size')
-    parser.add_argument('--class_number', required=True,
+    parser.add_argument('--class_number', type=int, required=True,
                         help='class number depend on your training datasets, MS1M-V1: 85164, MS1M-V2: 85742')
     parser.add_argument('--embedding_size', type=int,
                         help='Dimensionality of the embedding.', default=128)
@@ -150,7 +150,7 @@ if __name__ == '__main__':
         elif args.loss_type == 'cosine':
             inference_loss, logit = cosineface_loss(embeddings, labels, args.class_number, w_init_method)
         elif args.loss_type == 'combine':
-            inference_loss, logit = combine_loss(embeddings, labels, args.class_number, w_init_method)
+            inference_loss, logit = combine_loss(embeddings, labels, args.train_batch_size, args.class_number, w_init_method)
         else:
             assert 0, 'loss type error, choice item just one of [insightface, cosine, combine], please check!'
         tf.add_to_collection('losses', inference_loss)
