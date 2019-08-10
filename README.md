@@ -36,9 +36,9 @@ Tensorflow implementation for MobileFaceNet.
 
 ## performance
 
-|  size  | LFW(%) | Val@1e-3(%) | inference@MSM8976(ms) |
+|  size  | LFW(%) | Val@1e-3(%) | inference@MSM8976-cpu(ms) |
 | ------ | ------ | ----------- | --------------------- |
-|  5.7M  | 99.25+ |    96.8+    |          260-         |
+|  5.7M  |  99.4+ |    98.4+    |          260-         |
 
 ## References
 

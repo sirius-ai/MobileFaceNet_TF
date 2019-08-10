@@ -1,0 +1,2 @@
+model_checkpoint_path: "MobileFaceNet_TF.ckpt"
+all_model_checkpoint_paths: "MobileFaceNet_TF.ckpt"
