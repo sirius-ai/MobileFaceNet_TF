@@ -31,7 +31,7 @@ Tensorflow implementation for MobileFaceNet.
 
 1. refined super parameters by yourself special project.
 2. run script
-'''${MobileFaceNet_TF_ROOT}/train_nets.py'''
+`${MobileFaceNet_TF_ROOT}/train_nets.py`
 3. have a snapshot result at `${MobileFaceNet_TF_ROOT}/output`.
 
 ## performance
