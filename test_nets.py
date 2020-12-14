@@ -96,7 +96,7 @@ def main(args):
                 print('\nRunnning forward pass on {} images'.format(ver_name_list[db_index]))
                 start_time = time.time()
                 data_sets, issame_list = ver_list[db_index]
-                nrof_batches = data_sets.shape[0] // args.test_batch_size
+                nrof_batches = data_sets.shape[0] // args.test_batch_size + 1
                 emb_array = np.zeros((data_sets.shape[0], embedding_size))
 
                 for index in range(nrof_batches):
