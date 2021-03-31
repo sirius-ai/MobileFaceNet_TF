@@ -259,7 +259,10 @@ if __name__ == '__main__':
                             start_time = time.time()
                             data_sets, issame_list = ver_list[db_index]
                             emb_array = np.zeros((data_sets.shape[0], args.embedding_size))
-                            nrof_batches = data_sets.shape[0] // args.test_batch_size
+                            if data_sets.shape[0] % args.test_batch_size ==0:
+                            	nrof_batches = data_sets.shape[0] // args.test_batch_size
+                            else:
+                            	nrof_batches = data_sets.shape[0] // args.test_batch_size +1
                             for index in range(nrof_batches): # actual is same multiply 2, test data total
                                 start_index = index * args.test_batch_size
                                 end_index = min((index + 1) * args.test_batch_size, data_sets.shape[0])
