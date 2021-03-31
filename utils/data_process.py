@@ -24,7 +24,7 @@ def parse_args():
     return args
 
 def mx2tfrecords(imgidx, imgrec, args):
-    output_path = os.path.join(args.tfrecords_file_path, 'tran.tfrecords')
+    output_path = os.path.join(args.tfrecords_file_path, 'train.tfrecords')
     if not os.path.exists(args.tfrecords_file_path):
         os.makedirs(args.tfrecords_file_path)
     writer = tf.python_io.TFRecordWriter(output_path)
@@ -71,7 +71,7 @@ def create_tfrecords():
     imgrec = mx.recordio.MXIndexedRecordIO(args.idx_path, args.bin_path, 'r')
     s = imgrec.read_idx(0)
     header, _ = mx.recordio.unpack(s)
-    #print(header.label)
+    print(header.label)
     imgidx = list(range(1, int(header.label[0])))
     seq_identity = range(int(header.label[0]), int(header.label[1]))
     for identity in seq_identity:
@@ -101,10 +101,11 @@ def load_bin(db_name, image_size, args):
             data_list[flip][i, ...] = img
         i += 1
         if i % 1000 == 0:
-            print('loading bin', i)
+            print('\t- Loading bin', i)
     print(data_list[0].shape)
 
     return data_list, issame_list
+
 
 def load_data(db_name, image_size, args):
     bins, issame_list = pickle.load(open(os.path.join(args.eval_db_path, db_name+'.bin'), 'rb'), encoding='bytes')
@@ -125,6 +126,7 @@ def load_data(db_name, image_size, args):
     print(datasets.shape)
 
     return datasets, issame_list
+
 
 def test_tfrecords():
     args = parse_args()

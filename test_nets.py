@@ -59,14 +59,7 @@ def get_model_filenames(model_dir):
         return meta_file, ckpt_file
 
     meta_files = [s for s in files if '.ckpt' in s]
-    max_step = -1
-    for f in files:
-        step_str = re.match(r'(^model-[\w\- ]+.ckpt-(\d+))', f)
-        if step_str is not None and len(step_str.groups()) >= 2:
-            step = int(step_str.groups()[1])
-            if step > max_step:
-                max_step = step
-                ckpt_file = step_str.groups()[0]
+    ckpt_file = meta_file.split('.')[0] + '.ckpt'
     return meta_file, ckpt_file
 
 def main(args):
@@ -128,7 +121,7 @@ def parse_arguments(argv):
     parser.add_argument('--test_batch_size', type=int,
                         help='Number of images to process in a batch in the test set.', default=100)
     # parser.add_argument('--eval_datasets', default=['lfw', 'cfp_ff', 'cfp_fp', 'agedb_30'], help='evluation datasets')
-    parser.add_argument('--eval_datasets', default=['lfw'], help='evluation datasets')
+    parser.add_argument('--eval_datasets', default=['lfw', 'agedb_30', 'cfp_fp'], help='evluation datasets')
     parser.add_argument('--eval_db_path', default='./datasets/faces_ms1m_112x112', help='evluate datasets base path')
     parser.add_argument('--eval_nrof_folds', type=int,
                         help='Number of folds to use for cross validation. Mainly used for testing.', default=10)

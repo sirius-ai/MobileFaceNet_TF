@@ -291,4 +291,4 @@
 <tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
 <tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
 <tf.Variable 'MobileFaceNet/Logits/LinearConv1x1/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'combine_loss/embedding_weights:0' shape=(128, 85742) dtype=float32_ref>
+<tf.Variable 'insightface_loss/embedding_weights:0' shape=(128, 85742) dtype=float32_ref>
